@@ -2,7 +2,17 @@
 <html>
 
 <body>
-	<webview src="file:///home/simon/GIT/Matrix/element-electron-test/iframe.html" preload="./preload.js"></webview>
+	<div>
+		<webview src="https://jitsi.riot.im/YUUXcUgrEYDhTqhEgcmatrixorgmsl4c9dkrjn" preload="./preload.js"
+			style="height: 750px">
+	</div>
 </body>
+
+<script>
+	const webview = document.querySelector('webview')
+	webview.addEventListener('console-message', (e) => {
+		console.log(e)
+	})
+</script>
 
 </html>

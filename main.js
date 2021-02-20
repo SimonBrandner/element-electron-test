@@ -1,5 +1,4 @@
-const { app, BrowserWindow,BrowserView } = require("electron");
-
+const { app, BrowserWindow, BrowserView } = require("electron");
 
 function createWindow() {
 	const win = new BrowserWindow({
@@ -7,7 +6,9 @@ function createWindow() {
 		height: 600,
 		webPreferences: {
 			webviewTag: true,
-			contextIsolation: true
+			contextIsolation: false,
+			nodeIntegration: false,
+			nodeIntegrationInSubFrames: false
 		}
 	});
 	win.loadURL("file:///home/simon/GIT/Matrix/element-electron-test/index.html");
