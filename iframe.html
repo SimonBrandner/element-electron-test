@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+	<button onclick="onClicked()"> Hello world </button>
+	<p id="p"> Nothing here</p>
+</body>
+
+<script>
+	onClicked = () => {
+		const { JitsiMeetElectron } = window;
+		JitsiMeetElectron.obtainDesktopStreams().then((res) => { setHTML(res) }).catch((er) => { setHTML(er) });
+	}
+
+	setHTML = (message) => {
+		document.getElementById("p").innerHTML = message[0].name;
+	}
+</script>
+
+</html>
